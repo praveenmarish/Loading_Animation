@@ -1,0 +1,48 @@
+.Drop {
+  width: 20px;
+  height: 20px;
+  background-color: aqua;
+  position: relative;
+  border-radius: 20px;
+  margin: 0 auto;
+  top: -30px;
+  animation: drip cubic-bezier(1, 0, 0.91, 0.19) 2s infinite;
+}
+
+.Drop:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 30px solid aqua;
+  top: -22px;
+}
+
+.Bar {
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  width: 300px;
+  height: 10px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  animation: progress 2s 2000ms;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes progress {
+  to {
+    width: 20px;
+    background-color: aqua;
+  }
+}
+
+@keyframes drip {
+  to {
+    top: 50%;
+  }
+}
